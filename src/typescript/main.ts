@@ -1,18 +1,15 @@
 import { Todolist } from "./models/todolist";
 
-let todoList: Todolist[] = [];
+let todoList: Todolist[] = JSON.parse(localStorage.getItem("todo")) || [];
 
 window.onload = function () {
-    let userInput: HTMLInputElement = document.getElementById(
-        "user-input"
-    ) as HTMLInputElement;
+    let sumbitButton: HTMLButtonElement = document.querySelector("#btn");
+    sumbitButton.addEventListener("click", getUserInput);
 
-    let userValue = userInput.value;
-
-    creatingTodoFunction();
+    creatingTodo();
 };
 
-function creatingTodoFunction(): void {
+function creatingTodo(): void {
     for (let i = 0; i < todoList.length; i++) {
         let todoContainer: HTMLDivElement = document.createElement(
             "div"
@@ -39,4 +36,14 @@ function creatingTodoFunction(): void {
         todoContainer.appendChild(todoTitle);
         document.body.appendChild(todoContainer);
     }
+}
+function getUserInput() {
+    let input: HTMLInputElement = document.getElementById(
+        "user-input"
+    ) as HTMLInputElement;
+
+    let newTodo: Todolist = new Todolist(input.value, false);
+    todoList.push(newTodo);
+    console.log(input.value);
+    input.value = "";
 }

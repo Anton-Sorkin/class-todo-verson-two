@@ -1,6 +1,6 @@
 import { Todolist } from "./models/todolist";
 
-let todoList: Todolist[] = JSON.parse(localStorage.getItem("todo")) || [];
+let todoList: Todolist[] = [];
 
 window.onload = function () {
     let sumbitButton: HTMLButtonElement = document.querySelector("#btn");
@@ -27,13 +27,13 @@ function creatingTodo(): void {
             "button"
         ) as HTMLButtonElement;
 
-        todoTitle.innerHTML = "";
+        todoTitle.innerHTML = JSON.stringify(todoList[i]);
         finishedButton.addEventListener("click", () => {});
         removeButton.addEventListener("click", () => {});
 
+        todoContainer.appendChild(todoTitle);
         todoContainer.appendChild(removeButton);
         todoContainer.appendChild(finishedButton);
-        todoContainer.appendChild(todoTitle);
         document.body.appendChild(todoContainer);
     }
 }
@@ -46,4 +46,7 @@ function getUserInput() {
     todoList.push(newTodo);
     console.log(input.value);
     input.value = "";
+
+    let todoJSON: string = JSON.stringify(todoList);
+    localStorage.setItem("todo", todoJSON);
 }

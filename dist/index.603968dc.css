@@ -4,10 +4,109 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-  font-size: 14pt;
-  /*all styling here*/
+  font-size: 10pt;
+  background-color: #f1f1f1;
+}
+body .block {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body form {
+  height: 150px;
+  width: 100vw;
+  background-color: #1b1b1b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+}
+body form #user-input {
+  height: 50px;
+  background-color: #f1f1f1;
+}
+body form #btn {
+  height: 50px;
+}
+body ul {
+  height: auto;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body ul li {
+  width: 80%;
+  min-width: 250px;
+  height: 75px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  list-style: none;
+  margin: 50px 0px 0px 0px;
+  position: relative;
+  display: flex;
+}
+body ul li .todoText {
+  position: absolute;
+  top: 7.5%;
+  left: 2.5%;
+  height: 50px;
+  width: 65%;
+  min-width: 165px;
+  word-wrap: break-word;
+}
+@media (min-width: 768px) {
+  body ul li .todoText {
+    font-size: 1.3rem;
+  }
+}
+body ul li .klar {
+  position: absolute;
+  right: 15%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 25px;
+  width: 25px;
+  background-color: blueviolet;
+  border-radius: 5px;
+  border: none;
+  color: #1b1b1b;
+  background-color: #f1f1f1;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+}
+@media (min-width: 768px) {
+  body ul li .klar {
+    width: 40px;
+    height: 40px;
+  }
+}
+body ul li .taBort {
+  position: absolute;
+  right: 2.5%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 25px;
+  width: 25px;
+  background-color: blueviolet;
+  border-radius: 5px;
+  border: none;
+  color: #f1f1f1;
+  background-color: #1b1b1b;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+}
+@media (min-width: 768px) {
+  body ul li .taBort {
+    width: 40px;
+    height: 40px;
+  }
+}
+body ul .done {
+  opacity: 50%;
 }
 /*# sourceMappingURL=index.603968dc.css.map */

@@ -29,9 +29,15 @@ body form {
 body form #user-input {
   height: 50px;
   background-color: #f1f1f1;
+  border-radius: 10px 0px 0px 10px;
+  border: none;
 }
 body form #btn {
   height: 50px;
+  width: 50px;
+  border-radius: 0px 10px 10px 0px;
+  border: none;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.493);
 }
 body ul {
   height: auto;
@@ -84,6 +90,7 @@ body ul li .klar {
   body ul li .klar {
     width: 40px;
     height: 40px;
+    right: 10%;
   }
 }
 body ul li .taBort {
